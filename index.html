@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Website</title>
+	<link rel="stylesheet" type="text/css" href="style2.css">
+</head>
+<body>
+	<header>
+		<h1>Welcome to My Website</h1>
+		<nav>
+			<ul>
+				<li><a href="home.html">Home</a></li>
+				<li><a href="signup.html">Signup</a></li>
+				<li><a href="login.html">Login</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<?php
+			// Check if user details exist in the users.txt file
+			$usersFile = fopen("users.txt", "r");
+			$userDetails = fread($usersFile, filesize("users.txt"));
+			fclose($usersFile);
+
+			if (empty($userDetails)) {
+				// Redirect to signup page
+				header("Location: signup.html");
+				exit();
+			} else {
+				// Redirect to login page
+				header("Location: login.html");
+				exit();
+			}
+		?>
+	</main>
+
+	
+	<footer>
+		<p>&copy; 2023 Jedidiah Solomon. All rights reserved.</p>
+	</footer>
+</body>
+</html>
