@@ -1,31 +1,26 @@
-<?php
-// Get the form data
-$email = $_POST['email'];
-$password = $_POST['password'];
-
-// Open the file for reading
-$file = fopen("users.txt", "r");
-
-// Loop through each line of the file
-while (($line = fgets($file)) !== false) {
-	// Split the line into an array
-	$user = explode(", ", $line);
-
-	// Check if the email and password match
-	if ($user[1] == $email && $user[2] == $password) {
-		// Close the file
-		fclose($file);
-
-		// Redirect to the home page
-		header("Location: home.html");
-		exit;
-	}
-}
-
-// Close the file
-fclose($file);
-
-// If the email and password don't match, redirect to the signup page
-header("Location: signup.html");
-exit;
-?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+	<div class="box">
+	<h2>Welcome Back - Login</h2>
+	<?php if (isset($_GET['error']) && $_GET['error'] == 'invalid_login'): ?>
+		<p class="error-1">Invalid email or password. Please try again.</p>
+	<?php endif; ?>
+    <form action="config-2.php" method="post">
+      <div class="input-box">
+        <input type="email" id="email" name="email"  autocomplete="off" required>
+        <label for="email">Email</label>
+      </div>
+      <div class="input-box">
+        <input type="password" id="password" name="password" autocomplete="off" required>
+        <label for="password">Password</label>
+      </div>
+        <input type="submit" value="Login">
+    </form>
+  </div>
+</body>
+</html>
