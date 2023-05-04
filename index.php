@@ -4,24 +4,6 @@ if (isset($_SESSION['email'])) {
     header("Location: home.php");
     exit();
 }
-
-$filename = "users.txt";
-
-// Check if the file exists and has content
-if (file_exists($filename) && filesize($filename) > 0) {
-    // Open the file and read its contents
-    $usersFile = fopen($filename, "r");
-    $userDetails = fread($usersFile, filesize($filename));
-    fclose($usersFile);
-
-    // Redirect to login page
-    header("Location: login.php");
-    exit();
-} else {
-    // Redirect to signup page
-    header("Location: signup.php");
-    exit();
-}
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,7 +16,7 @@ if (file_exists($filename) && filesize($filename) > 0) {
         <h1>Welcome to My Website</h1>
         <nav>
             <ul>
-                <li><a href="home.php">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li><a href="signup.php">Signup</a></li>
                 <li><a href="login.php">Login</a></li>
             </ul>
@@ -42,6 +24,7 @@ if (file_exists($filename) && filesize($filename) > 0) {
     </header>
 
     <main>
+        <p>Welcome to My Website! Please sign up or log in to access the features.</p>
     </main>
 
     <footer>

@@ -20,7 +20,17 @@
         <label for="password">Password</label>
       </div>
         <input type="submit" value="Login">
+        <span class="follow-up">No account <a href="signup.php">Register?</a></span><br><br>
+
+        <input type="checkbox"  onclick="showMe();" id="remember1" name="remember" value="showme">
+        <label for="remember1" class="remember"> Remeber me</label>
+
+        <span class="forgot-psw">Forgot <a href="forgot-psw.php">Password?</a></span><br><br>
+
     </form>
   </div>
+
+
+  <script type="text/javascript" src="./scripts/custom.js"></script>
 </body>
 </html>

@@ -30,7 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         fclose($usersFile);
 
         // Redirect to signup page with error message
-        header("Location: signup.php?error=user_exists");
+        $errorMessage = "user_exists";
+        header("Location: signup.php?error=" . $errorMessage);
         exit();
     }
 }

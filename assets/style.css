@@ -76,3 +76,38 @@ body{
   width: 100%;
 }
 
+.follow-up {
+  margin-left: 18%;
+  color: rgb(241, 94, 8);
+}
+
+.follow-up a {
+  color: #3067b9;
+  text-decoration: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.follow-up a:hover {
+  color: rgba(48, 103, 185, 0.7);
+}
+
+.remember {
+  color: #fff;
+}
+
+.forgot-psw {
+  margin-left: 14%;
+  color: rgb(241, 94, 8);
+}
+
+.forgot-psw a {
+  color: #3067b9;
+  text-decoration: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.forgot-psw a:hover {
+  color: rgba(48, 103, 185, 0.7);
+}
